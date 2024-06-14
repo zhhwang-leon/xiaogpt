@@ -1,2 +1,2 @@
 cd /home/xiaogpt
-.venv/bin/python xiaogpt.py
+.venv/bin/python xiaogpt.py --hardware LX06  --mute_xiaoai --use_moonshot_api --moonshot_api_key sk-eNAbfEdZXAS8iSZulBQ7jhtuuAup5pEPbe91KZLyYySubQ3E
