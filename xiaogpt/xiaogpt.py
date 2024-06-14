@@ -179,7 +179,7 @@ class MiGPT:
         return (
             self.in_conversation
             and not query.startswith(WAKEUP_KEYWORD)
-            or query.lower().startswith(tuple(w.lower() for w in self.config.keyword))
+            or True#query.lower().startswith(tuple(w.lower() for w in self.config.keyword))
         )
 
     def need_change_prompt(self, record):
@@ -328,7 +328,8 @@ class MiGPT:
         return is_playing
 
     async def stop_if_xiaoai_is_playing(self):
-        is_playing = await self.get_if_xiaoai_is_playing()
+        # is_playing = await self.get_if_xiaoai_is_playing()
+        is_playing = True
         if is_playing:
             # stop it
             await self.mina_service.player_pause(self.device_id)
@@ -393,7 +394,7 @@ class MiGPT:
             else:
                 # waiting for xiaoai speaker done
                 await asyncio.sleep(8)
-            await self.do_tts(f"正在问{self.chatbot.name}请耐心等待")
+            # await self.do_tts(f"正在问{self.chatbot.name}请耐心等待")
             try:
                 print(
                     "以下是小爱的回答: ",

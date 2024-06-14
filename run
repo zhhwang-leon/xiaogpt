@@ -1,0 +1,2 @@
+cd /home/xiaogpt
+.venv/bin/python xiaogpt.py
